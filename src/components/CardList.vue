@@ -1,9 +1,10 @@
 <script setup>
   import Card from "./Card.vue";
+  import InfoBlock from "@/components/InfoBlock.vue";
 
   defineProps({
     items: Array,
-    isFavorites:Boolean
+    isFavorites: Boolean
   });
 
   const emit = defineEmits([
