@@ -3,6 +3,7 @@
 
   defineProps({
     items: Array,
+    isFavorites:Boolean
   });
 
   const emit = defineEmits([
@@ -12,7 +13,7 @@
 </script>
 
 <template>
-  <div class="grid grid-cols-4 gap-5">
+  <div v-auto-animate class="grid grid-cols-4 gap-5">
     <Card
         v-for="item in items"
         :id="item.id"
@@ -20,8 +21,8 @@
         :image-url="item.imageUrl"
         :is-added="item.isAdded"
         :is-favorite="item.isFavorite"
-        :on-click-added="()=>emit('addToCart',item)"
-        :on-click-favorite="()=>emit('addToFavorite',item)"
+        :on-click-added="isFavorites?null:()=>emit('addToCart',item)"
+        :on-click-favorite="isFavorites?null:()=>emit('addToFavorite',item)"
         :price="item.price"
         :title="item.title"
     />

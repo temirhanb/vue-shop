@@ -5,13 +5,13 @@
   const {carts, addToCart} = inject("drawer");
   const clickAddToCart = (cart) => {
     addToCart(cart);
-  }
+  };
   console.log(carts);
 </script>
 
 
 <template>
-  <div class="flex flex-col gap-5 ">
+  <div v-auto-animate class="flex flex-col gap-5">
     <cart-item
         v-for="cart in carts"
         :id="cart.id"

@@ -18,6 +18,7 @@
       class="relative border border-slate-100 rounded-3xl p-8 cursor-pointer hover:-translate-y-2 hover:shadow-xl transition bg-white"
   >
     <img
+        v-if="onClickFavorite !==null"
         :src="isFavorite ? '/like-2.svg' : '/like-1.svg'"
         alt="likes"
         @click="onClickFavorite"
@@ -31,6 +32,7 @@
         <strong>{{ price }} $.</strong>
       </div>
       <img
+          v-if="onClickAdded !== null"
           :src="isAdded ? '/checked.svg' : '/plus.svg'"
           alt="plus"
           @click="onClickAdded"
